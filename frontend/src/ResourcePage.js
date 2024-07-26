@@ -9,7 +9,7 @@ const ResourcePage = () => {
   useEffect(() => {
     const fetchResources = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/adminres/${endpoint}`);
+        const response = await axios.get(`https://failtofly-backend.onrender.com/adminres/${endpoint}`);
         setResources(response.data);
       } catch (error) {
         console.error('Error fetching resources:', error);
