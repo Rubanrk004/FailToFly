@@ -7,7 +7,7 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/admin/messages');
+        const response = await axios.get('https://failtofly-backend.onrender.com/api/admin/messages');
         setMessages(response.data);
       } catch (error) {
         console.error('Error fetching messages', error);
@@ -19,7 +19,7 @@ const AdminPage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/messages/${id}`);
+      await axios.delete(`https://failtofly-backend.onrender.com/api/admin/messages/${id}`);
       setMessages(messages.filter(message => message._id !== id));
     } catch (error) {
       console.error('Error deleting message', error);
