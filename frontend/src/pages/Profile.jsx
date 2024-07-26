@@ -10,7 +10,7 @@ function Profile() {
       try {
         const token = localStorage.getItem('token');
         console.log('Token:', token); 
-        const res = await axios.get('http://localhost:5000/api/auth/profile', {
+        const res = await axios.get('https://failtofly-backend.onrender.com/api/auth/profile', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
