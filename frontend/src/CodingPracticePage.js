@@ -10,7 +10,7 @@ const CodingPracticePage = () => {
 
   const fetchCodingResources = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/adminres/coding');
+      const response = await axios.get('https://failtofly-backend.onrender.com/adminres/coding');
       setCodingResources(response.data);
     } catch (error) {
       console.error('Error fetching coding resources:', error);
