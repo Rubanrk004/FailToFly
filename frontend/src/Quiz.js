@@ -8,7 +8,7 @@ const Quiz = () => {
     const [userInfo, setUserInfo] = useState({ name: '', email: '' });
 
     useEffect(() => {
-        axios.get('http://localhost:5000/api/quiz')
+        axios.get('https://failtofly-backend.onrender.com/api/quiz')
             .then(response => setQuizData(response.data))
             .catch(error => console.error('Error fetching quiz data:', error));
     }, []);
