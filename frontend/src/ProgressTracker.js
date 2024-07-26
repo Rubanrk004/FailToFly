@@ -20,7 +20,7 @@ const ProgressTracker = () => {
   const fetchTopics = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/topics', {
+      const response = await axios.get('https://failtofly-backend.onrender.com/api/topics', {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = response.data;
@@ -56,7 +56,7 @@ const ProgressTracker = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/topics', 
+      const response = await axios.post('https://failtofly-backend.onrender.com/api/topics', 
         newTopic, 
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -72,7 +72,7 @@ const ProgressTracker = () => {
   const handleDelete = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/topics/${id}`, {
+      await axios.delete(`https://failtofly-backend.onrender.com/api/topics/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const updatedTopics = topics.filter(topic => topic._id !== id);
