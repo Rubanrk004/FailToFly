@@ -13,7 +13,7 @@ const LandingPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/messages', formData);
+      await axios.post('https://failtofly-backend.onrender.com/api/messages', formData);
       alert('Message sent successfully');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
