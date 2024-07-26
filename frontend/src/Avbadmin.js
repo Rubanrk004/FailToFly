@@ -18,7 +18,7 @@ const AdminResourcePage = () => {
 
   const fetchResources = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/avbadmin/${formData.type}`);
+      const response = await axios.get(`https://failtofly-backend.onrender.com/avbadmin/${formData.type}`);
       setResources(response.data);
     } catch (error) {
       console.error('Error fetching resources:', error);
@@ -35,7 +35,7 @@ const AdminResourcePage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/avbadmin', formData);
+      const response = await axios.post('https://failtofly-backend.onrender.com/avbadmin', formData);
       alert('Resource posted successfully:', response.data);
       fetchResources();
     } catch (error) {
@@ -45,7 +45,7 @@ const AdminResourcePage = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/avbadmin/${id}`);
+      await axios.delete(`https://failtofly-backend.onrender.com/avbadmin/${id}`);
       setResources(resources.filter(resource => resource._id !== id));
     } catch (error) {
       console.error('Error deleting resource:', error);
