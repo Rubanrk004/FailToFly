@@ -10,7 +10,7 @@ const BehavioralQuestionsPage = () => {
 
   const fetchBehavioralQuestions = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/adminres/behavioral-questions');
+      const response = await axios.get('https://failtofly-backend.onrender.com/adminres/behavioral-questions');
       setQuestions(response.data);
     } catch (error) {
       console.error('Error fetching behavioral questions:', error);
