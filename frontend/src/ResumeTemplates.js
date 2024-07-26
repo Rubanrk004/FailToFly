@@ -11,7 +11,7 @@ const ResumeTemplates = () => {
 
   const fetchTemplates = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/templates');
+      const response = await axios.get('https://failtofly-backend.onrender.com/api/templates');
       setTemplates(response.data);
     } catch (error) {
       console.error('Error fetching resume templates:', error);
