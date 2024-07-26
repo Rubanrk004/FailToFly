@@ -8,7 +8,6 @@ const router = express.Router();
 const authRoutes = require('./routes/auth');
 const multer = require('multer');
 const path = require('path');
-const { v4: uuidv4 } = require('uuid');
 const User = require('./models/User');
 
 dotenv.config();
