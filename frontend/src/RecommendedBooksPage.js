@@ -10,7 +10,7 @@ const RecommendedBooksPage = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/avbadmin/book');
+      const response = await axios.get('https://failtofly-backend.onrender.com/avbadmin/book');
       setBooks(response.data);
     } catch (error) {
       console.error('Error fetching books:', error);
