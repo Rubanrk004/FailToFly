@@ -10,7 +10,7 @@ const CompanyResearchPage = () => {
 
   const fetchCompanyResources = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/adminres/company-research');
+      const response = await axios.get('https://failtofly-backend.onrender.com/adminres/company-research');
       setCompanyResources(response.data);
     } catch (error) {
       console.error('Error fetching company research resources:', error);
