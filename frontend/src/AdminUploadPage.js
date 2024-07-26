@@ -12,7 +12,7 @@ const AdminUploadPage = () => {
     formData.append("file", file);
 
     try {
-      await axios.post("http://localhost:5000/api/upload-template", formData);
+      await axios.post("https://failtofly-backend.onrender.com/api/upload-template", formData);
       alert("Template uploaded successfully");
     } catch (error) {
       console.error("Error uploading template", error);
