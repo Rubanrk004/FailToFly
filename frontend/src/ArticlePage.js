@@ -10,7 +10,7 @@ const ArticlePage = () => {
 
   const fetchArticles = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/avbadmin/article');
+      const response = await axios.get('https://failtofly-backend.onrender.com/avbadmin/article');
       setArticles(response.data);
     } catch (error) {
       console.error('Error fetching articles:', error);
