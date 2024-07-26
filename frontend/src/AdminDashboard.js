@@ -12,7 +12,7 @@ const AdminDashboard = () => {
 
   const fetchResources = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/adminres/${currentEndpoint}`);
+      const response = await axios.get(`https://failtofly-backend.onrender.com/adminres/${currentEndpoint}`);
       setResources(response.data);
     } catch (error) {
       console.error('Error fetching resources:', error);
@@ -40,7 +40,7 @@ const AdminDashboard = () => {
   const handleDelete = async (id) => {
     try {
       console.log(`Attempting to delete resource with ID: ${id}`);
-      const response = await axios.delete(`http://localhost:5000/adminres/${id}`);
+      const response = await axios.delete(`https://failtofly-backend.onrender.com/adminres/${id}`);
       if (response.status === 200) {
         console.log(`Resource with ID: ${id} deleted successfully`);
         setResources(prevResources => prevResources.filter(resource => resource._id !== id));
@@ -114,7 +114,7 @@ const AdminForm = ({ title, description, endpoint, fetchResources }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:5000/adminres/${endpoint}`, formData);
+      const response = await axios.post(`https://failtofly-backend.onrender.com/adminres/${endpoint}`, formData);
       alert('Resource posted successfully:', response.data);
       fetchResources(); 
     } catch (error) {
