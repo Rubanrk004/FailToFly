@@ -10,7 +10,7 @@ const RoadmapsPage = () => {
 
   const fetchRoadmaps = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/adminres/roadmaps');
+      const response = await axios.get('https://failtofly-backend.onrender.com/adminres/roadmaps');
       setRoadmaps(response.data);
     } catch (error) {
       console.error('Error fetching roadmaps:', error);
