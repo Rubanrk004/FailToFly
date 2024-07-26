@@ -7,7 +7,7 @@ const RoadmapDetailPage = () => {
   const [roadmap, setRoadmap] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/roadmaps/${id}`)
+    axios.get(`https://failtofly-backend.onrender.com/roadmaps/${id}`)
       .then(response => setRoadmap(response.data))
       .catch(error => console.error(error));
   }, [id]);
