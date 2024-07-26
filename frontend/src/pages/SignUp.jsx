@@ -12,7 +12,7 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/signup', { name, email, password });
+      const res = await axios.post('https://failtofly-backend.onrender.com/api/auth/signup', { name, email, password });
       console.log(res.data);
       // Redirect to sign in page
       navigate('/signin');
