@@ -39,7 +39,7 @@ const Quiz = () => {
             responses: userResponses,
         };
 
-        axios.post('http://localhost:5000/api/quiz/submit', submissionData)
+        axios.post('https://failtofly-backend.onrender.com/api/quiz/submit', submissionData)
             .then(response => setAnswers(response.data.answers))
             .catch(error => console.error('Error submitting quiz:', error));
     };
