@@ -76,7 +76,7 @@ const InterviewPreparationDashboard = () => {
   const fetchTasks = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/tasks', {
+      const response = await axios.get('https://failtofly-backend.onrender.com/api/tasks', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTasks(response.data);
@@ -89,7 +89,7 @@ const InterviewPreparationDashboard = () => {
   const fetchReminders = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/reminders', {
+      const response = await axios.get('https://failtofly-backend.onrender.com/api/reminders', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -102,7 +102,7 @@ const InterviewPreparationDashboard = () => {
 
   const fetchResources = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/resources');
+      const response = await axios.get('https://failtofly-backend.onrender.com/resources');
       setResources(response.data);
     } catch (err) {
       console.error('Error fetching resources:', err);
@@ -111,7 +111,7 @@ const InterviewPreparationDashboard = () => {
 
   const fetchProgress = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/progress');
+      const response = await axios.get('https://failtofly-backend.onrender.com/progress');
       setProgress(response.data);
     } catch (err) {
       console.error('Error fetching progress:', err);
@@ -121,7 +121,7 @@ const InterviewPreparationDashboard = () => {
   const addTask = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/tasks', 
+      const response = await axios.post('https://failtofly-backend.onrender.com/api/tasks', 
         { title: newTask },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -136,7 +136,7 @@ const InterviewPreparationDashboard = () => {
   const deleteTask = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/tasks/${id}`, {
+      await axios.delete(`https://failtofly-backend.onrender.com/api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setTasks(tasks.filter(task => task._id !== id));
@@ -149,7 +149,7 @@ const InterviewPreparationDashboard = () => {
   const addReminder = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:5000/api/reminders', 
+      const response = await axios.post('https://failtofly-backend.onrender.com/api/reminders', 
       { title: newReminder, date: new Date() },
       {
         headers: {
@@ -168,7 +168,7 @@ const InterviewPreparationDashboard = () => {
   const deleteReminder = async (id) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/reminders/${id}`, {
+      await axios.delete(`https://failtofly-backend.onrender.com/api/reminders/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
