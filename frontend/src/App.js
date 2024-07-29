@@ -20,6 +20,7 @@ import SignUp from './pages/SignUp';
 import InfoPage from './pages/Info';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import Profile from './pages/Profile';
 import AuthPage from './pages/Authentication';
 import ResumeTemplates from './ResumeTemplates';
