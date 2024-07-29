@@ -11,7 +11,7 @@ const ChatInterface = () => {
 
   const fetchChatHistory = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/chatbot/history');
+      const response = await axios.get('https://failtofly-chatbot.onrender.com/chatbot/history');
       setMessages(response.data);
     } catch (err) {
       console.error('Error fetching chat history:', err);
@@ -21,7 +21,7 @@ const ChatInterface = () => {
   const sendMessage = async () => {
     if (!newMessage.trim()) return;
     try {
-      const response = await axios.post('http://localhost:5001/chatbot', { message: newMessage });
+      const response = await axios.post('https://failtofly-chatbot.onrender.com/chatbot', { message: newMessage });
       setMessages([...messages, response.data]);
       setNewMessage(''); 
     } catch (err) {
@@ -31,7 +31,7 @@ const ChatInterface = () => {
 
   const clearChat = async () => {
     try {
-      await axios.delete('http://localhost:5001/chatbot/history');
+      await axios.delete('https://failtofly-chatbot.onrender.com/chatbot/history');
       setMessages([]);
     } catch (err) {
       console.error('Error clearing chat history:', err);
