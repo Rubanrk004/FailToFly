@@ -44,6 +44,25 @@ const InterviewPreparationDashboard = () => {
   const [progress, setProgress] = useState([]);
   const [newTask, setNewTask] = useState('');
   const [newReminder, setNewReminder] = useState('');
+
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleLogout = () => {
+        localStorage.removeItem('token');
+        navigate('/signin');
+    setIsMenuOpen(false); 
+  };
+
+  const goToProfile = () => {
+    navigate('/profile');
+    setIsMenuOpen(false); 
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  
   
   
  useEffect(() => {
@@ -162,41 +181,63 @@ const InterviewPreparationDashboard = () => {
 
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    // Clear the JWT token from localStorage
-    localStorage.removeItem('token');
-    // Redirect to the sign-in page
-    navigate('/signin');
-  };
-  const goToProfile = () => {
-    navigate('/profile');
-  };
 
 
   return (
     <div className="bg-background text-primary-foreground min-h-screen flex flex-col" >
-     <header className="h-30 fixed top-0 left-0 right-0 bg-gradient-to-r from-green-400 to-blue-500  py-4 px-6 flex justify-between items-center shadow-lg ">
-      <div className="flex items-center">
-        <img className="h-10 w-auto mr-2" src="/finallogos.png" alt="Logo" /> 
-        <h1 className="text-3xl font-bold tracking-wider text-black font-serif ">FailToFly</h1>
-      </div>
-      <div className="flex items-center">
-        <button
-          className="bg-white bg-gradient-to-r from-green-400 to-blue-500/80  hover:bg-gray-200 px-4 py-2 rounded-full shadow-md transition duration-300 mr-4 flex items-center"
-          onClick={handleLogout}
-          aria-label="Logout"
-        >
-          <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
-          Logout
-        </button>
-        <div className="relative">
-          <button className="bg-white bg-gradient-to-r from-green-400 to-blue-500/80 text-white hover:bg-gray-200 px-3 py-2 rounded-full shadow-md transition duration-300 flex items-center" aria-label="Profile" onClick={goToProfile}>
-            <FontAwesomeIcon icon={faUserCircle} className="mr-2" />
-            Profile
-          </button>
+      <header className="fixed top-0 left-0 right-0 bg-gradient-to-r from-green-400 to-blue-500 py-4 px-6 flex justify-between items-center shadow-lg">
+        <div className="flex items-center">
+          <img className="h-10 w-auto mr-2" src="/finallogos.png" alt="Logo" />
+          <h1 className="text-3xl font-bold tracking-wider text-black font-serif">FailToFly</h1>
         </div>
-      </div>
-    </header>
+        <div className="flex items-center space-x-4">
+          <div className="hidden md:flex space-x-4">
+            <button
+              className="bg-white bg-gradient-to-r from-green-400 to-blue-500/80 hover:bg-gray-200 px-4 py-2 rounded-full shadow-md transition duration-300 flex items-center"
+              onClick={handleLogout}
+              aria-label="Logout"
+            >
+              <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
+              Logout
+            </button>
+            <button
+              className="bg-white bg-gradient-to-r from-green-400 to-blue-500/80 text-white hover:bg-gray-200 px-3 py-2 rounded-full shadow-md transition duration-300 flex items-center"
+              aria-label="Profile"
+              onClick={goToProfile}
+            >
+              <FontAwesomeIcon icon={faUserCircle} className="mr-2" />
+              Profile
+            </button>
+          </div>
+          <div className="md:hidden relative">
+            <button
+              className="bg-white bg-gradient-to-r from-green-400 to-blue-500/80 text-white hover:bg-gray-200 px-3 py-2 rounded-full shadow-md transition duration-300 flex items-center"
+              aria-label="Menu"
+              onClick={toggleMenu}
+            >
+              <FontAwesomeIcon icon={faBars} className="mr-0" />
+            </button>
+            {isMenuOpen && (
+              <div className="absolute right-0 mt-5 w-48 bg-gradient-to-r from-green-400 to-blue-500/80 rounded-md shadow-lg py-2 z-20">
+                <button
+                  className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center"
+                  onClick={handleLogout}
+                >
+                  <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
+                  Logout
+                </button>
+                <button
+                  className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center"
+                  onClick={goToProfile}
+                >
+                  <FontAwesomeIcon icon={faUserCircle} className="mr-2" />
+                  Profile
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </header>
 
              
 
