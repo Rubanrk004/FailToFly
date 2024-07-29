@@ -24,7 +24,7 @@ const LandingPage = () => {
   return (
     <div className="font-sans">
      <div className="bg-gradient-to-r from-green-400 to-blue-500/40 p-8 text-white text-center flex flex-col items-center">
-  <img src="finallogos.png" alt="FailToFly Logo" className="mb-4 w-32 h-13 zoom-animation" />
+  <img src="./finallogos.png" alt="FailToFly Logo" className="mb-4 w-32 h-13 zoom-animation" />
   <h1 className="text-5xl font-bold mb-4">Welcome to FailToFly</h1>
   <div className="space-x-4">
     <Link to="/signup">
