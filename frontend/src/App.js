@@ -441,11 +441,7 @@ const App = () => {
             <ResourcePage />
           </ProtectedRoute>
         } />
-        // <Route path="/resume-templates" element={
-        //   <ProtectedRoute>
-        //     <ResumeTemplates />
-        //   </ProtectedRoute>
-        // } />
+          
         <Route path="/admin" element={
           <ProtectedRoute>
             <AdminDashboard />
