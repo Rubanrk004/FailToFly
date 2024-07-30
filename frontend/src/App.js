@@ -420,6 +420,7 @@ const App = () => {
       <Route path="/quiz" element={<Quiz />}/> 
       <Route path="/useruploads" element={<UploadPage />}/> 
       <Route path="/admin-login" element={<AdminLogin />} />
+      <Route path="/resume-templates" element = {<ResumeTemplates />} />
 
       <Route path="/admin-links" element={
           <ProtectedRoute>
@@ -440,11 +441,11 @@ const App = () => {
             <ResourcePage />
           </ProtectedRoute>
         } />
-        <Route path="/resume-templates" element={
-          <ProtectedRoute>
-            <ResumeTemplates />
-          </ProtectedRoute>
-        } />
+        // <Route path="/resume-templates" element={
+        //   <ProtectedRoute>
+        //     <ResumeTemplates />
+        //   </ProtectedRoute>
+        // } />
         <Route path="/admin" element={
           <ProtectedRoute>
             <AdminDashboard />
